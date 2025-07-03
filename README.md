@@ -153,18 +153,17 @@ Desde Swagger puedes consultar y probar directamente los endpoints REST de cada 
 | GET    | /api/productos            | Retorna el listado completo de productos               |
 | GET    | /api/productos/{id}       | Retorna un producto por su ID                          |
 | POST   | /api/productos            | Crea un nuevo producto. Requiere nombre, precio, stock |
-| GET    | /api/health         | Verifica si el microservicio productos está disponible |
+| GET    | /api/health /productos    | Verifica si el microservicio productos está disponible |
 
 
 ### inventario.api
 
 | Método | Ruta                              | Descripción                                                              |
 |--------|-----------------------------------|--------------------------------------------------------------------------|
-| GET    | /api/inventario                   | Lista todos los registros de inventario                                 |
 | POST   | /api/inventario                   | Crea un nuevo registro de inventario asociado a un producto             |
 | POST   | /api/inventario/comprar           | Realiza la compra de un producto si hay inventario suficiente           |
-| GET    | /api/inventario/exists/{id}       | Verifica si existe inventario para el ID de producto especificado       |
-| GET    | /api/health                       | Endpoint de verificación del estado del servicio (health check)         |
+| GET    | /api/inventario/{productoId}      | Verifica si existe inventario para el ID de producto especificado       |
+| GET    | /api/health/inventario            | Endpoint de verificación del estado del servicio (health check)         |
 
 
 ##  Pruebas unitarias
