@@ -218,5 +218,13 @@ Cada microservicio expone un endpoint para ver su estado, este endpoint retorna 
 }
 ```
 
+## Uso herramientas IA
+Se utilizaron herraientas IA para la mejora de los siguientes aspectos:
+- Redacción de pruebas unitarias
+- Generación de documentación técnica
+- Configuración de Docker y compose
+- Configuracion de conexion entre contenedor y base de datos
+- Diagramas en Mermaid
+
 
 
