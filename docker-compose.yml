@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  productos.api:
+    image: productos-api
+    build:
+      context: ./productos
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - CONEXION_SQL=Server=host.docker.internal,1433;Database=PruebaTecnicaDb;User Id=dockerUser;Password=12345!;
+    networks:
+      - microrred
+
+  inventario.api:
+    image: inventario-api
+    build:
+      context: ./inventario
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+    environment:
+      - CONEXION_SQL=Server=host.docker.internal,1433;Database=PruebaTecnicaDb;User Id=dockerUser;Password=12345!;
+    networks:
+      - microrred
+
+networks:
+  microrred:
+
