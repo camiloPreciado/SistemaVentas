@@ -130,6 +130,33 @@ Se debe ubicar desde cmd en la carpeta raiz del proyecto donde esta el archivo d
 - docker-compose build
 - docker-compose up -d
 
+## Logs de errores
+
+Ambos microservicios implementan un middleware que captura errores no controlados y los guarda en un archivo local dentro del contenedor.
+
+- Ubicación del archivo de log: `C:\inetpub\wwwroot\App_Data\logs.txt`
+
+Este archivo registra:
+
+- Excepciones de base de datos
+- Fallos de conexión
+- Errores inesperados en tiempo de ejecución
+
+### Cómo acceder al log desde Docker
+Se debe ubicar desde cmd en la carpeta raiz del proyecto donde esta el archivo docker-compose.yml
+#### 🔎 Ver logs en productos.api
+Ejecute los siguientes comandos:
+- `docker exec -it productos-productos.api-1 powershell`
+- `cd C:\inetpub\wwwroot\App_Data`
+- `type logs.txt`
+
+#### 🔎 Ver logs en inventario.api
+Ejecute los siguientes comandos:
+- `docker exec -it productos-inventario.api-1 powershell`
+- `cd C:\inetpub\wwwroot\App_Data`
+- `type logs.txt`
+
+
 ## Autenticación
 Todos los endpoints protegidos requieren el siguiente encabezado en las solicitudes HTTP: `x-api-key: conectionTest`
 Este valor es verificado en los middleware de ambos microservicios.
