@@ -7,7 +7,9 @@ namespace inventario.api.Data
 {
     public class InventarioRepository
     {
-        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        //private readonly string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+
+        string _connectionString = Environment.GetEnvironmentVariable("CONEXION_SQL");
 
         public InventarioDto ObtenerPorProductoId(int productoId)
         {
